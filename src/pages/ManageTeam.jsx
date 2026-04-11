@@ -19,7 +19,7 @@ export default function Team() {
       <main className="flex-1 p-6 pt-24 md:p-8 md:pt-8 overflow-y-auto">
         <Header />
 
-        <header className="flex justify-between items-center mb-10">
+        <header className="flex flex-col md:flex-row gap-4 justify-between md:items-center mb-10">
           <div>
             <h1 className="text-3xl font-bold text-gray-300">Team Management</h1>
             <div className="h-1 w-16 bg-blue-500 mt-2 rounded"></div>
@@ -33,11 +33,11 @@ export default function Team() {
           </button>
         </header>
 
-        <div className="grid grid-cols-12 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-12 gap-6">
           {validTeamMembers.map((member) => (
             <div 
               key={member.id} 
-              className="col-span-4 bg-[#1c2128] rounded-3xl p-6 flex items-center justify-between border border-gray-800 shadow-sm"
+              className="md:col-span-4 bg-[#1c2128] rounded-3xl p-6 flex items-center justify-between border border-gray-800 shadow-sm"
             >
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-[#161b22] border border-gray-800 flex items-center justify-center">

@@ -19,8 +19,8 @@ export default function Archive() {
       <main className="flex-1 p-6 pt-24 md:p-8 md:pt-8 overflow-y-auto">
         <Header />
 
-        {/* Page Title Section */}
-        <header className="flex justify-between items-center mb-10">
+        {/* Page Title Section - MADE RESPONSIVE */}
+        <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 mb-10">
           <div>
             <h1 className="text-3xl font-bold text-gray-300">
               Archived Projects
@@ -28,10 +28,10 @@ export default function Archive() {
             <div className="h-1 w-16 bg-blue-500 mt-2 rounded"></div>
           </div>
 
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-2 w-full sm:w-auto mt-2 sm:mt-0">
             <button
               onClick={() => setIsModalOpen(true)}
-              className="bg-[#a2b2f8] hover:bg-[#8e9ff0] transition-colors rounded-xl flex items-center justify-center text-[#161b22] font-bold text-xs tracking-widest py-3 px-6 shadow-lg ml-3"
+              className="bg-[#a2b2f8] hover:bg-[#8e9ff0] transition-colors rounded-xl flex items-center justify-center text-[#161b22] font-bold text-xs tracking-widest py-3 px-6 shadow-lg w-full sm:w-auto"
             >
               <Plus size={18} className="mr-2" /> NEW PROJECT
             </button>
@@ -50,7 +50,8 @@ export default function Archive() {
             {archivedProjects.map((project) => (
               <div
                 key={project.id}
-                className="col-span-4 bg-[#1c2128] rounded-3xl p-8 flex flex-col border border-gray-800 shadow-inner relative group transition-all duration-300"
+                // FIX APPLIED HERE: Stacks on mobile (12), splits on tablet (6), three-across on desktop (4)
+                className="col-span-12 md:col-span-6 lg:col-span-4 bg-[#1c2128] rounded-3xl p-8 flex flex-col border border-gray-800 shadow-inner relative group transition-all duration-300"
               >
                 {/* Archived Badge */}
                 <span className="absolute top-6 right-6 bg-[#2d333b] text-gray-400 text-[9px] font-bold px-2 py-1 rounded uppercase tracking-wider">

@@ -67,6 +67,7 @@ export default function Projects() {
         return 'bg-[#1c2128] border-gray-800 hover:border-gray-600';
     }
   };
+  
 
   return (
     <div className="flex h-screen bg-[#0d1117] text-gray-300 relative overflow-hidden font-sans">
@@ -75,22 +76,22 @@ export default function Projects() {
       <main className="flex-1 p-6 pt-24 md:p-8 md:pt-8 overflow-y-auto">
         <Header />
 
-        {/* Header Area */}
-        <header className="flex justify-between items-center mb-8">
+        {/* Header Area - MADE RESPONSIVE */}
+        <header className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-0 mb-8">
           <div>
             <h1 className="text-3xl font-bold text-gray-300">Projects Catalogue</h1>
             <div className="h-1 w-16 bg-blue-500 mt-2 rounded"></div>
           </div>
           <button 
             onClick={() => setIsModalOpen(true)}
-            className="bg-[#a2b2f8] hover:bg-[#8e9ff0] transition-colors rounded-xl flex items-center justify-center text-[#161b22] font-bold text-xs tracking-widest py-3 px-6 shadow-lg"
+            className="bg-[#a2b2f8] hover:bg-[#8e9ff0] transition-colors rounded-xl flex items-center justify-center text-[#161b22] font-bold text-xs tracking-widest py-3 px-6 shadow-lg w-full sm:w-auto mt-2 sm:mt-0"
           >
             <Plus size={18} className="mr-2" /> NEW PROJECT
           </button>
         </header>
 
-        {/* Stats Banner */}
-        <div className="grid grid-cols-3 gap-6 mb-10">
+        {/* Stats Banner - MADE RESPONSIVE (grid-cols-1 on mobile, md:grid-cols-3 on desktop) */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
           <div className="bg-[#1c2128] border border-gray-800 rounded-2xl p-6 flex items-center justify-between shadow-sm">
             <div>
               <p className="text-gray-500 text-[11px] font-bold uppercase tracking-widest mb-1">Active Projects</p>
@@ -129,7 +130,8 @@ export default function Projects() {
           {activeProjects.map((project) => (
              <div 
               key={project.id}
-              className={`col-span-4 rounded-3xl p-8 flex flex-col border shadow-inner group transition-all duration-300 relative ${getCardTheme(project)}`}
+              // FIX APPLIED HERE: Stacks on mobile (12), splits on tablet (6), three-across on desktop (4)
+              className={`col-span-12 md:col-span-6 lg:col-span-4 rounded-3xl p-8 flex flex-col border shadow-inner group transition-all duration-300 relative ${getCardTheme(project)}`}
             >
               
               <div className="flex justify-between items-start mb-6">
@@ -138,7 +140,7 @@ export default function Projects() {
                 </h3>
                 
                 {/* STATUS BADGE */}
-                <span className={`text-[9px] font-bold px-2 py-1 rounded uppercase tracking-wider ${getStatusStyle(project.status)}`}>
+                <span className={`text-[9px] font-bold px-2 py-1 rounded uppercase tracking-wider whitespace-nowrap ${getStatusStyle(project.status)}`}>
                   {project.status || 'TO DO'}
                 </span>
               </div>
@@ -159,8 +161,8 @@ export default function Projects() {
                   {/* Deadline Badge */}
                   {project.dueDate && (
                     <div className="flex items-center gap-1.5 bg-[#161b22] px-2.5 py-1.5 rounded-lg border border-gray-800/50 shadow-sm">
-                      <Calendar size={12} className="text-gray-500" />
-                      <span className={`text-[10px] font-bold uppercase tracking-wider ${isOverdue(project.dueDate, project.status) ? 'text-red-400' : 'text-gray-400'}`}>
+                      <Calendar size={12} className="text-gray-500 shrink-0" />
+                      <span className={`text-[10px] font-bold uppercase tracking-wider whitespace-nowrap ${isOverdue(project.dueDate, project.status) ? 'text-red-400' : 'text-gray-400'}`}>
                         {formatDate(project.dueDate)}
                       </span>
                     </div>

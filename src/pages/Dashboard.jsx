@@ -57,14 +57,14 @@ export default function Dashboard() {
         </header>
 
         {/* TOP ROW */}
-        <div className="grid grid-cols-12 gap-6 mb-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6 mb-6">
           
-          <div className="col-span-3 bg-[#1c2128] border border-gray-800 rounded-2xl p-6 shadow-sm">
+          <div className="md:col-span-3 bg-[#1c2128] border border-gray-800 rounded-2xl p-6 shadow-sm">
             <p className="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-2">Total Projects</p>
             <h2 className="text-4xl font-bold text-blue-400">{stats.totalProjects}</h2>
           </div>
 
-          <div className="col-span-3 bg-[#1c2128] border border-gray-800 rounded-2xl p-6 shadow-sm">
+          <div className="md:col-span-3 bg-[#1c2128] border border-gray-800 rounded-2xl p-6 shadow-sm">
             <p className="text-gray-500 text-[10px] font-bold uppercase tracking-widest mb-2">Overdue Tasks</p>
             <h2 className={`text-4xl font-bold ${stats.overdueTasks > 0 ? 'text-red-400' : 'text-gray-600'}`}>
               {stats.overdueTasks}
@@ -72,7 +72,7 @@ export default function Dashboard() {
           </div>
 
           {/* Create Project Button Card */}
-          <Link to="/projects" className="col-span-6 bg-[#a2b2f8] hover:bg-[#8e9ff0] transition-colors border border-[#8e9ff0] rounded-2xl p-6 shadow-sm flex items-center justify-center group cursor-pointer">
+          <Link to="/projects" className="md:col-span-6 bg-[#a2b2f8] hover:bg-[#8e9ff0] transition-colors border border-[#8e9ff0] rounded-2xl p-6 shadow-sm flex items-center justify-center group cursor-pointer">
             <h2 className="text-sm font-bold text-[#161b22] uppercase tracking-widest flex items-center group-hover:scale-105 transition-transform">
               <Plus size={20} className="mr-2" /> Create New Project
             </h2>
@@ -81,10 +81,10 @@ export default function Dashboard() {
         </div>
 
         {/* BOTTOM ROW */}
-        <div className="grid grid-cols-12 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
           
           {/* SYSTEM EFFICIENCY CHART */}
-          <div className="col-span-8 bg-[#1c2128] border border-gray-800 rounded-2xl p-8 shadow-sm flex flex-col relative">
+          <div className="md:col-span-8 bg-[#1c2128] border border-gray-800 rounded-2xl p-8 shadow-sm flex flex-col relative">
             <div className="flex justify-between items-center mb-4">
               <h3 className="text-lg font-bold text-gray-200">System Efficiency</h3>
               <span className="text-sm font-bold text-gray-400">{stats.systemEfficiency}%</span>
@@ -119,7 +119,7 @@ export default function Dashboard() {
           </div>
 
           {/* TEAM ACTIVITY FEED */}
-          <div className="col-span-4 bg-[#1c2128] border border-gray-800 rounded-2xl p-8 shadow-sm flex flex-col">
+          <div className="md:col-span-4 bg-[#1c2128] border border-gray-800 rounded-2xl p-8 shadow-sm flex flex-col">
             <h3 className="text-lg font-bold text-gray-200 mb-6">Team Activity</h3>
             
             <div className="flex-1 flex flex-col gap-6 overflow-y-auto pr-2">
