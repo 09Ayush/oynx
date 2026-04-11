@@ -1,0 +1,41 @@
+// This generates the tool you will use to talk to the DB in your API routes
+generator client {
+  provider = "prisma-client-js"
+}
+
+// This tells Prisma to connect to your Neon PostgreSQL database
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// --- YOUR APP DATA MODELS ---
+
+model User {
+  id        Int       @id @default(autoincrement())
+  name      String
+  handle    String    @unique
+  role      String    @default("USER") // Can be "MANAGER" or "USER"
+  
+  // A user can be assigned to multiple projects
+  projects  Project[] 
+  
+  createdAt DateTime  @default(now())
+}
+
+model Project {
+  id          Int       @id @default(autoincrement())
+  title       String
+  description String?
+  status      String    @default("TO DO") 
+  progress    Int       @default(0)
+  isArchived  Boolean   @default(false)
+  dueDate     DateTime?
+  
+  // This links the Project to the User who is assigned to it
+  assignee    User?     @relation(fields: [assigneeId], references: [id])
+  assigneeId  Int?      
+  
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
