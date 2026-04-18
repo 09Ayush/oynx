@@ -3,7 +3,7 @@ import { User } from 'lucide-react';
 import { useAuth } from '../components/AuthContext'; // Import the Auth hook!
 
 export default function Login() {
-  const { login } = useAuth(); // Grab the login function from context
+  const { login } = useAuth(); 
   const [error, setError] = useState('');
   
   const [credentials, setCredentials] = useState({
@@ -14,13 +14,13 @@ export default function Login() {
   const handleChange = (e) => {
     const { name, value } = e.target;
     setCredentials(prev => ({ ...prev, [name]: value }));
-    setError(''); // Clear the red error message when they start typing again
+    setError(''); 
   };
 
   const handleLogin = (e) => {
     e.preventDefault();
     
-    // Pass the credentials to your context
+    
     const success = login(credentials.username, credentials.password);
     
     if (!success) {

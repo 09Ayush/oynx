@@ -1,54 +1,92 @@
-# 🔷 Oynx | Enterprise Project Management Dashboard
+# 🚀 Oynx | Enterprise Project Management Dashboard
 
-![Oynx Dashboard Preview](https://via.placeholder.com/1200x600/0d1117/a2b2f8?text=Add+a+Screenshot+of+your+Dashboard+Here)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-View_Project-blue?style=for-the-badge)](https://oynx-vu13.vercel.app/)
+[![Tech Stack](https://img.shields.io/badge/Stack-React%20%7C%20Vercel%20%7C%20Prisma%20%7C%20Neon-2ea44f?style=for-the-badge)](#-tech-stack)
 
-Oynx is a modern, full-stack enterprise project management dashboard designed for high-efficiency teams. Built with a serverless architecture, it features real-time database synchronization, dynamic data visualization, and responsive design. 
+**Oynx** is a full-stack, responsive project management and team collaboration dashboard . It features a real-time analytics engine, relational database architecture, and a modern, dark-themed user interface.
 
-This project was developed as a Final Year Academic Project to demonstrate proficiency in full-stack web development, relational database modeling, and serverless deployment.
-
----
-
-## ✨ Key Features
-
-* **Real-time Analytics Engine:** Custom-built algorithms calculate System Efficiency, Overdue Tasks, and Active Projects on the fly, visualizing them via dynamic SVG progress rings.
-* **Relational Database Management:** Full CRUD (Create, Read, Update, Delete) capabilities for both Projects and Team Members, linked via Prisma foreign-key relations.
-* **Dynamic UI & Visual Hierarchy:** Project cards dynamically shift color themes (using custom RGB thresholds) based on status and deadline proximity (e.g., automatically glowing red when a task is overdue).
-* **Live Activity Feed:** Auto-generates human-readable activity logs based on database timestamp mutations (`updatedAt`).
-* **Secure Routing & Auth:** Implements a frontend Authentication Context with Protected Routes and LocalStorage token memory to secure the manager's view.
-* **Mobile-First Responsive Design:** Features a custom fluid layout with a sliding off-canvas hamburger menu for mobile devices.
+## 🌟 Key Features
+* **📊 Live Analytics Dashboard:** Automatically calculates System Efficiency and overdue tasks, featuring a dynamic SVG circular progress ring and a real-time team activity feed.
+* **📁 Project Catalogue (CRUD):** Complete project lifecycle management. Create, assign, edit, and archive projects seamlessly. Features dynamic color-coding for overdue tasks.
+* **👥 Dynamic Team Management:** Relational database integration allows managers to add/remove team members and explicitly assign them to individual projects.
+* **🔐 Secure Access:** Protected routing with a frontend authentication context and session persistence.
+* **📱 Fully Responsive:** Adaptive layout with a mobile-friendly slide-out hamburger menu and responsive grid system.
+* **🎨 Premium UI/UX:** Enterprise-grade dark mode interface built with Tailwind CSS, featuring custom deep-shade RGBA color palettes.
 
 ---
 
 ## 🛠️ Tech Stack
+**Frontend:**
+* [React.js](https://reactjs.org/) (Vite)
+* [Tailwind CSS](https://tailwindcss.com/) (Styling)
+* [Lucide React](https://lucide.dev/) (Icons)
+* [React Router](https://reactrouter.com/) (Navigation & Protected Routes)
 
-**Frontend**
-* React.js (Vite)
-* Tailwind CSS (Custom enterprise dark theme)
-* Lucide React (Iconography)
-* React Router DOM
-
-**Backend & Database**
-* Vercel Serverless Functions (`/api` routes)
-* Node.js
-* Prisma ORM (Object-Relational Mapping)
-* Neon Database (Serverless PostgreSQL)
+**Backend & Database:**
+* [Vercel Serverless Functions](https://vercel.com/docs/functions) (`/api` routes)
+* [Prisma ORM](https://www.prisma.io/) (Database Modeling)
+* [Neon PostgreSQL](https://neon.tech/) (Cloud Database)
 
 ---
 
-## 🗄️ Database Schema
+## 📸 Screenshots
 
-The application relies on a relational PostgreSQL database with two primary models:
+| Manager Dashboard | Project Catalogue |
+| :---: | :---: |
+| <img src="./assets/dashboard.png" alt="Dashboard" /> | <img src="./assets/project.PNG" alt="Projects" /> |
 
-1. **User Model:** Manages team members (Name, Handle, Role).
-2. **Project Model:** Tracks tasks (Title, Description, Status, DueDate) and maintains a relational link (`assigneeId`) to the User model.
+| Team Management | Mobile Responsive View |
+| :---: | :---: |
+| <img src="./assets/team.PNG" alt="Team" /> | <img src="./assets/mobile.PNG" alt="Mobile" /> |
 
 ---
 
-## 🚀 Local Development Setup
+## 🚀 Running the Project Locally
 
-Follow these steps to run the Oynx dashboard locally on your machine.
+To run this project on your local machine, follow these steps. Note: You must use the Vercel CLI to properly run the backend API routes locally.
 
 ### 1. Clone the repository
 ```bash
-git clone [https://github.com/YOUR_USERNAME/oynx-dashboard.git](https://github.com/YOUR_USERNAME/oynx-dashboard.git)
-cd oynx-dashboard
+git clone [https://github.com/09Ayush/oynx.git](https://github.com/09Ayush/oynx.git)
+cd oynx
+```
+
+ ### 2. Install Dependencies
+```bash
+npm install
+```
+
+ ### 3. Environment Setup
+Create a .env file in the root directory and add your Neon PostgreSQL connection string:
+```bash
+DATABASE_URL="postgresql://[USER]:[PASSWORD]@[HOST]/[DATABASE]?sslmode=require"
+```     
+
+### 4. Setup the Database (Prisma)
+Push the schema to your database to create the necessary tables:
+```bash
+npx prisma db push
+``` 
+### 5. Install Vercel CLI (If not already installed)
+Because this project relies on Vercel Serverless Functions, standard npm run dev will not execute the backend APIs.
+```bash
+npm install -g vercel
+``` 
+
+### 6. Start the Development Server
+Boot up both the React frontend and Serverless backend simultaneously:
+```bash
+vercel dev
+```
+Open http://localhost:3000 to view it in your browser. Use the credentials manager / Oynx2026! to log in.
+
+## 🔮 Future Scope
+* **JWT Authentication:** Upgrading the frontend authentication to use secure, token-based backend verification using JSON Web Tokens.
+
+* **Data Export:** Adding a feature to export project analytics and reports to .csv formats.
+
+* **Role-Based Access Control (RBAC):** Creating distinct UI views for "Manager" roles versus standard "User" roles.
+
+---
+
+**Developed with ❤️ by Ayush Thakur.**

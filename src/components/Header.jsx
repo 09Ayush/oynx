@@ -1,5 +1,5 @@
 import React from 'react';
-import { User } from 'lucide-react'; // Don't forget to import the icon!
+import { User } from 'lucide-react'; 
 
 export default function Header() {
   return (
@@ -16,7 +16,6 @@ export default function Header() {
           <p className="text-gray-500 text-[10px] uppercase">Manager</p>
         </div>
         
-        {/* NEW UNIFORM AVATAR */}
         <div className="w-10 h-10 rounded-full border-2 border-pink-400 bg-[#1c2128] flex items-center justify-center">
           <User className="text-gray-400 w-5 h-5" />
         </div>

@@ -1,15 +1,15 @@
-// This generates the tool you will use to talk to the DB in your API routes
+// This generates the tool we will use to talk to the DB in API routes
 generator client {
   provider = "prisma-client-js"
 }
 
-// This tells Prisma to connect to your Neon PostgreSQL database
+// This tells Prisma to connect to our Neon PostgreSQL database
 datasource db {
   provider = "postgresql"
   url      = env("DATABASE_URL")
 }
 
-// --- YOUR APP DATA MODELS ---
+// --- MY APP DATA MODELS ---
 
 model User {
   id        Int       @id @default(autoincrement())

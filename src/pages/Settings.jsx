@@ -1,15 +1,14 @@
 import React from 'react';
 import Sidebar from '../components/Sidebar';
-import Header from '../components/Header'; // Assuming you have this like other pages!
+import Header from '../components/Header'; 
 
 export default function Settings() {
   return (
     <div className="flex h-screen bg-[#0d1117] text-gray-300 font-sans relative overflow-hidden">
       
-      {/* Reusing our global sidebar keeps the codebase small and clean */}
       <Sidebar />
 
-      {/* Added the mobile-responsive padding here (pt-24) */}
+      
       <main className="flex-1 p-6 pt-24 md:p-8 md:pt-8 overflow-y-auto">
         
         {/* --- Page Header --- */}

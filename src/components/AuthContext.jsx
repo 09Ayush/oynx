@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
 
   // 2. The Login Function
   const login = (username, password) => {
-    // HARDCODED FOR NOW: Change these to whatever you want!
+    // HARDCODED
     if (username === 'manager' && password === 'Oynx2026!') {
       localStorage.setItem('oynx_token', 'manager_logged_in');
       setIsAuthenticated(true);

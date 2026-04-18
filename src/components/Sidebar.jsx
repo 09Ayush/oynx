@@ -8,8 +8,8 @@ import {
   Users,
   Settings,
   LogOut,
-  Menu, // <-- Added Hamburger icon
-  X     // <-- Added Close icon
+  Menu, 
+  X     
 } from "lucide-react";
 
 const navLinks = [

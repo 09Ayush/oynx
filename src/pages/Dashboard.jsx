@@ -1,6 +1,6 @@
 import React from 'react';
 import { Plus, User } from 'lucide-react';
-import { Link } from 'react-router-dom'; // Assuming you use react-router for navigation
+import { Link } from 'react-router-dom'; 
 import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 import { useProjectStore } from '../components/ProjectContext';

@@ -1,7 +1,5 @@
-// 1. Import routing tools
-import { Routes, Route } from 'react-router-dom';
 
-// 2. Import all your page components
+import { Routes, Route } from 'react-router-dom';
 import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Projects from './pages/Projects';
@@ -9,14 +7,14 @@ import Archive from './pages/Archive';
 import ManageTeam from './pages/ManageTeam';
 import Settings from './pages/Settings';
 
-// 3. Import your Context Providers and Bouncer
+
 import { ProjectProvider } from './components/ProjectContext';
 import { AuthProvider } from './components/AuthContext';
 import ProtectedRoute from './components/ProtectedRoute';
 
 export default function App() {
   return (
-    // Wrap everything in AuthProvider first!
+    // Wraping everything in AuthProvider first!
     <AuthProvider>
       <ProjectProvider>
         <Routes>

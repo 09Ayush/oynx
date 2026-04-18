@@ -50,7 +50,6 @@ export default function Archive() {
             {archivedProjects.map((project) => (
               <div
                 key={project.id}
-                // FIX APPLIED HERE: Stacks on mobile (12), splits on tablet (6), three-across on desktop (4)
                 className="col-span-12 md:col-span-6 lg:col-span-4 bg-[#1c2128] rounded-3xl p-8 flex flex-col border border-gray-800 shadow-inner relative group transition-all duration-300"
               >
                 {/* Archived Badge */}
@@ -58,9 +57,7 @@ export default function Archive() {
                   Archived
                 </span>
 
-                {/* FIX APPLIED HERE: Added 'pr-24' to ensure the text truncates 
-                  well before it touches the absolute positioned badge 
-                */}
+                
                 <h3 className="text-lg font-bold text-blue-300 mb-6 truncate pr-24">
                   {project.title}
                 </h3>
@@ -72,7 +69,6 @@ export default function Archive() {
                       <User className="text-gray-500 w-3.5 h-3.5" />
                     </div>
                     <span className="text-xs text-gray-400 font-medium truncate max-w-[100px]">
-                      {/* THE FIX: Add the question mark before .name! */}
                       {project.assignee?.name || "Unassigned"}
                     </span>
                   </div>

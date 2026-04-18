@@ -51,7 +51,7 @@ export default function Projects() {
   // --- CUSTOM DEEP-SHADE CARD BACKGROUNDS ---
   const getCardTheme = (project) => {
     if (isOverdue(project.dueDate, project.status)) {
-      // OVERDUE: User's Custom Deep Red
+      // OVERDUE: 
       return 'bg-[rgb(42,22,24)] border-[rgb(84,34,38)] hover:border-[rgb(120,40,45)]'; 
     }
     
@@ -90,7 +90,7 @@ export default function Projects() {
           </button>
         </header>
 
-        {/* Stats Banner - MADE RESPONSIVE (grid-cols-1 on mobile, md:grid-cols-3 on desktop) */}
+        {/* Stats Banner  */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
           <div className="bg-[#1c2128] border border-gray-800 rounded-2xl p-6 flex items-center justify-between shadow-sm">
             <div>
@@ -129,8 +129,7 @@ export default function Projects() {
         <div className="grid grid-cols-12 gap-6">
           {activeProjects.map((project) => (
              <div 
-              key={project.id}
-              // FIX APPLIED HERE: Stacks on mobile (12), splits on tablet (6), three-across on desktop (4)
+              key={project.id}          
               className={`col-span-12 md:col-span-6 lg:col-span-4 rounded-3xl p-8 flex flex-col border shadow-inner group transition-all duration-300 relative ${getCardTheme(project)}`}
             >
               
