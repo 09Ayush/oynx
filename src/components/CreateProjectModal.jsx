@@ -131,7 +131,6 @@ export default function CreateProjectModal({ isOpen, onClose, editingProject }) 
               {editingProject ? 'Save Changes' : 'Launch Project'}
             </button>
           </div>
-          
         </form>
       </div>
     </div>

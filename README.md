@@ -78,7 +78,10 @@ Boot up both the React frontend and Serverless backend simultaneously:
 ```bash
 vercel dev
 ```
-Open http://localhost:3000 to view it in your browser. Use the credentials manager / Oynx2026! to log in.
+Open http://localhost:3000 to view it in your browser. 
+Use the credentials  to log in:-
+ * Username:- manager 
+ * Password:- Oynx2026!       
 
 ## 🔮 Future Scope
 * **JWT Authentication:** Upgrading the frontend authentication to use secure, token-based backend verification using JSON Web Tokens.
